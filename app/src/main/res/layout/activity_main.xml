@@ -1,33 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Einloggen"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <EditText
+        android:id="@+id/eTUserNameL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Benutzername"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/eTPasswordL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Passwort"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@+id/eTUserNameL"
+        app:layout_constraintTop_toBottomOf="@+id/eTUserNameL" />
+
+    <CheckBox
+        android:id="@+id/cBStayLoggedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eingeloggt bleiben"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/eTPasswordL"
+        app:layout_constraintTop_toBottomOf="@+id/eTPasswordL" />
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Weiter"
+        app:layout_constraintEnd_toEndOf="@+id/eTPasswordL"
+        app:layout_constraintStart_toStartOf="@+id/cBStayLoggedIn"
+        app:layout_constraintTop_toBottomOf="@+id/cBStayLoggedIn" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:text="Registrieren"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogIn" />
+
+    <EditText
+        android:id="@+id/eTUserNameR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:hint="Benutzername"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/eTPasswordR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Passwort"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/eTUserNameR"
+        app:layout_constraintTop_toBottomOf="@+id/eTUserNameR" />
+
+    <EditText
+        android:id="@+id/eTConfirmPasswordR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Passwort bestätigen"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/eTPasswordR"
+        app:layout_constraintTop_toBottomOf="@+id/eTPasswordR" />
+
+    <Button
+        android:id="@+id/btnRegistration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Registrieren"
+        app:layout_constraintEnd_toEndOf="@+id/eTConfirmPasswordR"
+        app:layout_constraintStart_toStartOf="@+id/eTConfirmPasswordR"
+        app:layout_constraintTop_toBottomOf="@+id/eTConfirmPasswordR" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
